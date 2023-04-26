@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 //import axios from 'axios';
 import config from './config';
-
+//test whatever
 function WeatherAPI({ city }) {
     const [weatherData, setWeatherData] = useState(null);
   
@@ -12,7 +12,7 @@ function WeatherAPI({ city }) {
         setWeatherData(data);
       };
       fetchData();
-    }, [city]);
+    }, [city, state]);
 
   function generateWeatherTip(temperature, weatherCondition) {
     let tip = '';
