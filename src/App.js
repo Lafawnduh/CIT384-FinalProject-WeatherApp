@@ -7,15 +7,22 @@ import WeatherSearchBar from './WeatherSearchBar';
 function App() {
   const [city, setCity] = useState('Los Angeles');
   const [cityInput, setCityInput] = useState('');
+  const [selectedCity, setSelectedCity] = useState({
+    name: 'Los Angeles',
+    state: 'CA',
+    country: 'US',
+    lat: 34.0536909,
+    lon: -118.242766,
+  });
 
   function handleSearch(city) {
-    setCity(city);
+    setSelectedCity(city);
+    setCity(city.name);
   }
 
   return (
     <div className="App">
-
-      <WeatherAPI city={city} />
+      <WeatherAPI selectedCity={selectedCity} />
       <WeatherSearchBar
         cityInput={cityInput}
         setCityInput={setCityInput}
