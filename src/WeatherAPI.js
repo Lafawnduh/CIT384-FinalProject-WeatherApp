@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 //import axios from 'axios';
-import config from './config';
-//test whatever
-function WeatherAPI({ city }) {
+import config from './config';2
+//test
+function WeatherAPI({ city, state}) {
     const [weatherData, setWeatherData] = useState(null);
   
     useEffect(() => {
       const fetchData = async () => {
-        const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${config.WEATHER_API_KEY}&units=imperial`);
+        const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city},${state}&appid=${config.WEATHER_API_KEY}&units=imperial`);
         const data = await response.json();
         setWeatherData(data);
       };
