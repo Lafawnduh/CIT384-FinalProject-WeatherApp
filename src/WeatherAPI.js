@@ -7,7 +7,7 @@ function WeatherAPI({ selectedCity }) {
   useEffect(() => {
     const fetchData = async () => {
       const response = await fetch(
-        `https://api.openweathermap.org/data/2.5/weather?lat=${selectedCity.lat}&lon=${selectedCity.lon}&appid=${config.WEATHER_API_KEY}&units=imperial`
+        `https://api.openweathermap.org/data/3.0/onecall?lat=${selectedCity.lat}&lon=${selectedCity.lon}&exclude=minutely,hourly,daily,alerts&units=imperial&appid=${config.WEATHER_API_KEY}`
       );
       const data = await response.json();
       setWeatherData(data);
@@ -49,15 +49,15 @@ function WeatherAPI({ selectedCity }) {
         {weatherData && (
           <>
             <img
-              src={`http://openweathermap.org/img/w/${weatherData.weather[0].icon}.png`}
+              src={`http://openweathermap.org/img/w/${weatherData.current.weather[0].icon}.png`}
               alt="Weather icon"
             />
-            <p>Temperature: {weatherData.main.temp}&deg;F</p>
-            <p>Humidity: {weatherData.main.humidity}%</p>
-            <p>Description: {weatherData.weather[0].description}</p>
+            <p>Temperature: {weatherData.current.temp}&deg;F</p>
+            <p>Description: {weatherData.current.weather[0].description}</p>
+            <p>Humidity: {weatherData.current.humidity}%</p>
             <p id="weatherTip">
               <b>Weather Tip: </b>
-              {generateWeatherTip(weatherData.main.temp, weatherData.weather[0].main)}
+              {generateWeatherTip(weatherData.current.temp, weatherData.current.weather[0].main)}
             </p>
           </>
         )}
