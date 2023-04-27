@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import config from './config';
-import './DailyForecast.css';
+import '../styles/DailyForecast.css';
 
 function DailyForecast({ selectedCity }) {
   const [weatherData, setWeatherData] = useState(null);

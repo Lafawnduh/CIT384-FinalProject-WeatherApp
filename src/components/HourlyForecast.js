@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import config from './config';
-import './HourlyForecast.css';
+import '../styles/HourlyForecast.css';
 
 function HourlyForecast({ selectedCity }) {
   const [weatherData, setWeatherData] = useState(null);

@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import './App.css';
-import NewsAPI from './NewsAPI';
-import DailyForecast from './DailyForecast';
-import WeatherSearchBar from './WeatherSearchBar';
-import HourlyForecast from './HourlyForecast';
-import CurrentWeather from './CurrentWeather';
+import NewsAPI from './components/NewsAPI';
+import DailyForecast from './components/DailyForecast';
+import WeatherSearchBar from './components/WeatherSearchBar';
+import HourlyForecast from './components/HourlyForecast';
+import CurrentWeather from './components/CurrentWeather';
 
 function App() {
   const [city, setCity] = useState('Los Angeles');
@@ -38,6 +38,7 @@ function App() {
       <NewsAPI city={city} />
 
       <DailyForecast selectedCity={selectedCity} />
+
     </div>
   );
 }

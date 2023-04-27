@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import config from './config';
-import './CurrentWeather.css';
+import '../styles/CurrentWeather.css';
+import WeatherTips from './WeatherTips'
 
 function CurrentWeather({ selectedCity }) {
   const [weatherData, setWeatherData] = useState(null);
@@ -31,6 +32,10 @@ function CurrentWeather({ selectedCity }) {
             <p>Description: {weatherData.current.weather[0].description}</p>
             <p>Humidity: {weatherData.current.humidity}%</p>
           </div>
+          <WeatherTips
+            temperature={weatherData.current.temp}
+            weatherCondition={weatherData.current.weather[0].main}
+          />
         </>
       ) : (
         <h2>Loading...</h2>
