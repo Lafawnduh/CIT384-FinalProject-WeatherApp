@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import './App.css';
 import NewsAPI from './NewsAPI';
-import WeatherAPI from './WeatherAPI';
+import DailyForecast from './DailyForecast';
 import WeatherSearchBar from './WeatherSearchBar';
+import HourlyForecast from './HourlyForecast';
+import CurrentWeather from './CurrentWeather';
 
 function App() {
   const [city, setCity] = useState('Los Angeles');
@@ -17,18 +19,25 @@ function App() {
 
   function handleSearch(city) {
     setSelectedCity(city);
-    setCity(city.name);
+    // Update the city variable with the entire string that includes the city name, state, and country
+    setCity(`${city.name} ${city.state} ${city.country}`);
   }
 
   return (
     <div className="App">
-      <WeatherAPI selectedCity={selectedCity} />
+      <CurrentWeather selectedCity={selectedCity}/>
+      
       <WeatherSearchBar
         cityInput={cityInput}
         setCityInput={setCityInput}
         handleSearch={handleSearch}
       /><br></br>
+
+      <HourlyForecast selectedCity={selectedCity} />
+
       <NewsAPI city={city} />
+
+      <DailyForecast selectedCity={selectedCity} />
     </div>
   );
 }

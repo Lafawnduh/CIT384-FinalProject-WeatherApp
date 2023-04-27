@@ -13,13 +13,12 @@ import {
   function NewsAPI({ city }) {
     const [newsData, setNewsData] = useState([]);
     const [loading, setLoading] = useState(false);
-  
     useEffect(() => {
       // Make api call to news api
       async function getNewsData() {
         setLoading(true);
         const resp = await axios.get(
-          `https://newsapi.org/v2/everything?q=${city} Weather&apiKey=${config.NEWS_API_KEY}&pageSize=4`
+          `https://newsapi.org/v2/everything?apiKey=${config.NEWS_API_KEY}&q=${city}&pageSize=4`
         );
         setNewsData(resp.data.articles);
         setLoading(false);
