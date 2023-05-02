@@ -30,8 +30,6 @@ function HourlyForecast({ selectedCity }) {
                   alt="Weather icon"
                 />
                 <p>Temperature: {hour.temp}&deg;F</p>
-                <p>Description: {hour.weather[0].description}</p>
-                <p>Humidity: {hour.humidity}%</p>
               </div>
             ))}
         </div>

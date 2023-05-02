@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
-import NewsAPI from './components/NewsAPI';
+import NewsArticles from './components/NewsArticles';
 import DailyForecast from './components/DailyForecast';
 import WeatherSearchBar from './components/WeatherSearchBar';
 import HourlyForecast from './components/HourlyForecast';
@@ -35,7 +35,7 @@ function App() {
 
       <HourlyForecast selectedCity={selectedCity} />
 
-      <NewsAPI city={city} />
+      <NewsArticles />
 
       <DailyForecast selectedCity={selectedCity} />
 
