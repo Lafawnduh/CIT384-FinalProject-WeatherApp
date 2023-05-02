@@ -30,7 +30,7 @@ function CurrentWeather({ selectedCity }) {
             />
             <p>Temperature: {weatherData.current.temp}&deg;F</p>
             <p>Description: {weatherData.current.weather[0].description}</p>
-            <p>Humidity: {weatherData.current.humidity}%</p>
+            <p>Humidity: Hello Everyone! {weatherData.current.humidity}%</p>
           </div>
           <WeatherTips
             temperature={weatherData.current.temp}
