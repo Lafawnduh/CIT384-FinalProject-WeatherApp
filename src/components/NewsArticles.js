@@ -14,14 +14,13 @@ function NewsArticles({ city }) {
   const [newsData, setNewsData] = useState([]);
   const [loading, setLoading] = useState(false);
   useEffect(() => {
-    // Make api call to CurrentsAPI
+    // Make api call to GNews API
     async function getNewsData() {
       setLoading(true);
       const resp = await axios.get(
-        `https://api.currentsapi.services/v1/latest-news?apiKey=${config.NEWS_ARTICLES_API_KEY}&language=en&regions=US`
+        `https://gnews.io/api/v4/search?q=Los Angeles Weather&lang=en&country=us&max=4&apikey=${config.NEWS_ARTICLES_API_KEY}`
       );
-      const articles = resp.data.news.slice(0, 4); // Limit the articles to 4
-      setNewsData(articles);
+      setNewsData(resp.data.articles);
       setLoading(false);
     }
 
