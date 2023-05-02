@@ -19,7 +19,7 @@ function HourlyForecast({ selectedCity }) {
   return (
     <div className="container">
       <div className="weather-card">
-        <h2>{weatherData ? `Hourly Forecast for ${selectedCity.name} ${selectedCity.state}` : 'Loading...'}</h2>
+        <h2>{weatherData ? `Hourly Forecast for ${selectedCity.name}, ${selectedCity.state}` : 'Loading...'}</h2>
         <div className="hourly-weather-container">
           {weatherData &&
             weatherData.hourly.map((hour, index) => (

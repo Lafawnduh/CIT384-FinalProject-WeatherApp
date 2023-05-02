@@ -7,14 +7,14 @@ import HourlyForecast from './components/HourlyForecast';
 import CurrentWeather from './components/CurrentWeather';
 
 function App() {
-  const [city, setCity] = useState('Los Angeles');
+  const [city, setCity] = useState('Northridge');
   const [cityInput, setCityInput] = useState('');
   const [selectedCity, setSelectedCity] = useState({
-    name: 'Los Angeles',
+    name: 'Northridge',
     state: 'CA',
     country: 'US',
-    lat: 34.0536909,
-    lon: -118.242766,
+    lat: 34.2345615,
+    lon: -118.5369316,
   });
 
   function handleSearch(city) {

@@ -19,7 +19,7 @@ function DailyForecast({ selectedCity }) {
   return (
     <div className="container">
       <div className="weather-card">
-      <h2>{weatherData ? `Daily Forecast for ${selectedCity.name} ${selectedCity.state}` : 'Loading...'}</h2>
+      <h2>{weatherData ? `Daily Forecast for ${selectedCity.name}, ${selectedCity.state}` : 'Loading...'}</h2>
         <div className="daily-weather-container">
           {weatherData &&
             weatherData.daily.slice(0, 7).map((day, index) => (
