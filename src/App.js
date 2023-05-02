@@ -20,7 +20,7 @@ function App() {
   function handleSearch(city) {
     setSelectedCity(city);
     // Update the city variable with the entire string that includes the city name, state, and country
-    setCity(`${city.name} ${city.state} ${city.country}`);
+    setCity(`${city.name}`);
   }
 
   return (
@@ -35,7 +35,7 @@ function App() {
 
       <HourlyForecast selectedCity={selectedCity} />
 
-      <NewsArticles />
+      <NewsArticles city={city}/>
 
       <DailyForecast selectedCity={selectedCity} />
 
