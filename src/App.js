@@ -5,6 +5,7 @@ import DailyForecast from './components/DailyForecast';
 import WeatherSearchBar from './components/WeatherSearchBar';
 import HourlyForecast from './components/HourlyForecast';
 import CurrentWeather from './components/CurrentWeather';
+import SlideShow from './components/SlideShow'
 
 function App() {
   const [city, setCity] = useState('Northridge');
@@ -20,11 +21,14 @@ function App() {
   function handleSearch(city) {
     setSelectedCity(city);
     // Update the city variable with the entire string that includes the city name, state, and country
-    setCity(`${city.name}`);
+    setCity(`${city.name} ${city.state}`);
   }
 
   return (
     <div className="App">
+
+      <SlideShow city={city} />
+
       <CurrentWeather selectedCity={selectedCity}/>
       
       <WeatherSearchBar
@@ -32,6 +36,8 @@ function App() {
         setCityInput={setCityInput}
         handleSearch={handleSearch}
       /><br></br>
+
+      
 
       <HourlyForecast selectedCity={selectedCity} />
 
