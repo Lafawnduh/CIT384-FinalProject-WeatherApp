@@ -1,9 +1,13 @@
+// Import necessary libraries
 import React from 'react';
 
+// WeatherTips component
 function WeatherTips({ temperature, weatherCondition }) {
+  // Function to generate a weather tip based on temperature and weather condition
   function generateWeatherTip(temperature, weatherCondition) {
     let tip = '';
 
+    // Determine the appropriate clothing tip based on the temperature
     if (temperature < 40) {
       tip = "It's pretty cold outside. Make sure to wear a warm coat.";
     } else if (temperature >= 40 && temperature < 60) {
@@ -14,6 +18,7 @@ function WeatherTips({ temperature, weatherCondition }) {
       tip = "It's hot outside. Stay cool with lightweight clothing and drink plenty of water.";
     }
 
+    // Append tips for specific weather conditions
     if (
       weatherCondition === "Rain" ||
       weatherCondition === "Drizzle" ||
@@ -29,6 +34,7 @@ function WeatherTips({ temperature, weatherCondition }) {
   }
 
   return (
+    // Display the generated weather tip
     <p id="weatherTip">
       <b>Weather Tip: </b>
       {generateWeatherTip(temperature, weatherCondition)}
@@ -36,4 +42,5 @@ function WeatherTips({ temperature, weatherCondition }) {
   );
 }
 
+// Export the WeatherTips component
 export default WeatherTips;
