@@ -6,6 +6,7 @@ import DailyForecast from './components/DailyForecast';
 import WeatherSearchBar from './components/WeatherSearchBar';
 import HourlyForecast from './components/HourlyForecast';
 import CurrentWeather from './components/CurrentWeather';
+import SlideShow from './components/SlideShow';
 
 // App component
 function App() {
@@ -20,6 +21,13 @@ function App() {
     lon: -118.5369316,
   });
 
+  // Images for the slideshow
+  const images = [
+    process.env.PUBLIC_URL + '/CSUN-image-1.jpg',
+    process.env.PUBLIC_URL + '/CSUN-image-2.jpg',
+    process.env.PUBLIC_URL + '/CSUN-image-3.jpg',
+  ];
+
   // Function to handle searching for a city and updating state variables
   function handleSearch(city) {
     setSelectedCity(city);
@@ -30,6 +38,8 @@ function App() {
   return (
     // Render the components within the App component
     <div className="App">
+      <SlideShow images={images} />
+
       <CurrentWeather selectedCity={selectedCity} />
 
       <WeatherSearchBar
