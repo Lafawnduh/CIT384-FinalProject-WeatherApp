@@ -36,3 +36,20 @@
     transform: rotate(360deg);
   }
 }
+
+.main-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px;
+}
+
+.current-weather-container {
+  width: 50%;
+  margin-right: 10px;
+}
+
+.hourly-forecast-container {
+  width: 50%;
+  margin-left: 10px;
+}

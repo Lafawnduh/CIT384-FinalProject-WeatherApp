@@ -1,19 +1,22 @@
 import React, { useState, useEffect } from 'react';
-import '../styles/SlideShow.css'; // Import the styles for the SlideShow
+import '../styles/SlideShow.css';
 
 function SlideShow({ images }) {
-  const [current, setCurrent] = useState(0); // Initialize current image index state
+  const [current, setCurrent] = useState(0);
 
-  // Change the current image every 3 seconds
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrent((prev) => (prev + 1) % images.length);
     }, 3000);
-    return () => clearInterval(timer); // Clear interval on component unmount
+    return () => clearInterval(timer);
   }, [images]);
+
+  const goPrev = () => setCurrent(current === 0 ? images.length - 1 : current - 1);
+  const goNext = () => setCurrent(current === images.length - 1 ? 0 : current + 1);
 
   return (
     <div className="slideshow">
+      <button className="arrow prev" onClick={goPrev}>&lt;</button>
       {images.map((image, index) => (
         <div
           key={index}
@@ -22,6 +25,7 @@ function SlideShow({ images }) {
           <img src={image} alt={`Slide ${index}`} />
         </div>
       ))}
+      <button className="arrow next" onClick={goNext}>&gt;</button>
     </div>
   );
 }

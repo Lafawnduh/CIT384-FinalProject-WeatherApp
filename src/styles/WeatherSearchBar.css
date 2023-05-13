@@ -1,0 +1,22 @@
+.weather-search-bar {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  max-width: 500px;
+  margin: 20px auto;
+}
+
+.search-input {
+  width: 100%;
+  padding: 1px;
+  border-radius: 5px;
+}
+
+.search-button {
+  padding: 15px !important;
+  border-radius: 5px !important;
+  border: none !important;
+  background-color: #d22030 !important; 
+  margin-left: 10px !important;
+  cursor: pointer !important;
+}

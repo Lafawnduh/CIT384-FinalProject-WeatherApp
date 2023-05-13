@@ -3,13 +3,14 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import config from './config';
 import {
-  Grid,
   Card,
   CardActionArea,
   CardMedia,
   CardContent,
   Typography,
 } from '@mui/material';
+import '../styles/NewsArticles.css';
+
 
 // NewsArticles component
 function NewsArticles({ city }) {
@@ -35,39 +36,35 @@ function NewsArticles({ city }) {
 
   return (
     <div className="App">
-      {/* Display loading status */}
       {loading ? (
         <p>Loading...</p>
       ) : (
-        // Display the news articles in a grid
-        <Grid container spacing={2}>
+        <div className="grid-container">
           {newsData.map((article, index) => (
-            <Grid key={index} item xs={6}>
-              <Card>
-                <CardActionArea
-                  href={article.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {/* Display the article image */}
-                  <CardMedia
-                    component="img"
-                    alt={article.title}
-                    height="140"
-                    image={article.image}
-                    title={article.title}
-                  />
-                  {/* Display the article title */}
-                  <CardContent>
-                    <Typography gutterBottom variant="h6" component="h2">
-                      {article.title}
-                    </Typography>
-                  </CardContent>
-                </CardActionArea>
-              </Card>
-            </Grid>
+            <Card key={index} className="card">
+              <CardActionArea
+                href={article.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="card-action-area"
+              >
+                <CardMedia
+                  component="img"
+                  alt={article.title}
+                  height="140"
+                  image={article.image}
+                  title={article.title}
+                  className="card-media"
+                />
+                <CardContent>
+                  <Typography gutterBottom variant="h6" component="h2" className="card-title">
+                    {article.title}
+                  </Typography>
+                </CardContent>
+              </CardActionArea>
+            </Card>
           ))}
-        </Grid>
+        </div>
       )}
     </div>
   );

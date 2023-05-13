@@ -34,3 +34,13 @@
     width: 120px;
   }
   
+  .hourly-table {
+    border-collapse: separate;
+    border-spacing: 0;
+    width: 100%;
+  }
+  
+  .hourly-table td {
+    padding: 0px;
+  }
+  

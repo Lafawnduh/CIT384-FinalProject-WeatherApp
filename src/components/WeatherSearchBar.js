@@ -4,6 +4,7 @@ import Autocomplete from '@mui/material/Autocomplete';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import config from './config';
+import '../styles/WeatherSearchBar.css';
 
 // WeatherSearchBar component
 function WeatherSearchBar({ cityInput, setCityInput, handleSearch }) {
@@ -29,7 +30,7 @@ function WeatherSearchBar({ cityInput, setCityInput, handleSearch }) {
   }, [cityInput]);
 
   return (
-    <div>
+    <div className="weather-search-bar">
       <Autocomplete
         options={options} // Pass the city options for Autocomplete
         getOptionLabel={(option) => `${option.name}, ${option.state}, ${option.country}`} // Display the label for each option
@@ -42,6 +43,7 @@ function WeatherSearchBar({ cityInput, setCityInput, handleSearch }) {
             onChange={(e) => setCityInput(e.target.value)} // Update the cityInput state when the input value changes
           />
         )}
+        className="search-input"
       />
       <Button
         variant="contained"
@@ -52,6 +54,7 @@ function WeatherSearchBar({ cityInput, setCityInput, handleSearch }) {
             setSelectedCity(null); // Reset the selectedCity state
           }
         }}
+        className="search-button"
       >
         Search
       </Button>

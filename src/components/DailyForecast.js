@@ -29,21 +29,12 @@ function DailyForecast({ selectedCity }) {
         <div className="daily-weather-container">
           {/* Check if weatherData is available */}
           {weatherData &&
-            // Iterate through the daily forecast data (up to 7 days) and display the relevant information
             weatherData.daily.slice(0, 7).map((day, index) => (
               <div key={index} className="daily-weather">
-                {/* Display the date */}
                 <h3>{new Date(day.dt * 1000).toLocaleDateString()}</h3>
-                {/* Display the weather icon */}
-                <img
-                  src={`http://openweathermap.org/img/w/${day.weather[0].icon}.png`}
-                  alt="Weather icon"
-                />
-                {/* Display the day's temperature */}
-                <p>Temperature: {day.temp.day}&deg;F</p>
-                {/* Display the weather description */}
-                <p>Description: {day.weather[0].description}</p>
-                {/* Display the humidity */}
+                <img src={`http://openweathermap.org/img/w/${day.weather[0].icon}.png`} alt="Weather icon" />
+                <p>{Math.round(day.temp.day)}&deg;F</p>
+                <p>{day.weather[0].description}</p>
                 <p>Humidity: {day.humidity}%</p>
               </div>
             ))}

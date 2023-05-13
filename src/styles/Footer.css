@@ -1,0 +1,16 @@
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #d22030;
+    color: white;
+    padding: 10px;
+    min-height: 60px;
+  }
+  
+  .footer-text {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  

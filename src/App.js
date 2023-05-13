@@ -7,6 +7,8 @@ import WeatherSearchBar from './components/WeatherSearchBar';
 import HourlyForecast from './components/HourlyForecast';
 import CurrentWeather from './components/CurrentWeather';
 import SlideShow from './components/SlideShow';
+import Header from './components/Header';
+import Footer from './components/Footer';
 
 // App component
 function App() {
@@ -38,21 +40,30 @@ function App() {
   return (
     // Render the components within the App component
     <div className="App">
-      <SlideShow images={images} />
+      <Header />
 
-      <CurrentWeather selectedCity={selectedCity} />
+      <SlideShow images={images} />
 
       <WeatherSearchBar
         cityInput={cityInput}
         setCityInput={setCityInput}
         handleSearch={handleSearch}
-      /><br></br>
+      />
 
-      <HourlyForecast selectedCity={selectedCity} />
+      <div className="main-container">
+        <div className="current-weather-container">
+          <CurrentWeather selectedCity={selectedCity} />
+        </div>
 
-      <NewsArticles city={city} />
+        <div className="hourly-forecast-container">
+          <HourlyForecast selectedCity={selectedCity} />
+        </div>
+      </div>
 
       <DailyForecast selectedCity={selectedCity} />
+
+      <NewsArticles city={city} />
+      <Footer />
     </div>
   );
 }

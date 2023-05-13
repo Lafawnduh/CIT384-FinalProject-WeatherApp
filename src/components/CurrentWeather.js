@@ -27,28 +27,28 @@ function CurrentWeather({ selectedCity }) {
       {/* Check if weatherData is available */}
       {weatherData ? (
         <>
-          {/* Display the selected city and state */}
-          <h2>Current Weather for {selectedCity.name}, {selectedCity.state}</h2>
           <div className="current-weather">
+            {/* Display the selected city and state */}
+            <h2>Current Weather for {selectedCity.name}, {selectedCity.state}</h2>
             {/* Display the current date and time */}
-            <h3>{new Date(weatherData.current.dt * 1000).toLocaleString()}</h3>
+            <h3>{new Date(weatherData.current.dt * 1000).toLocaleDateString()}, {new Date(weatherData.current.dt * 1000).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</h3>
             {/* Display the weather icon */}
             <img
               src={`http://openweathermap.org/img/w/${weatherData.current.weather[0].icon}.png`}
               alt="Weather icon"
             />
             {/* Display the current temperature */}
-            <p>Temperature: {weatherData.current.temp}&deg;F</p>
+            <p>Temperature: {Math.round(weatherData.current.temp)}&deg;F</p>
             {/* Display the weather description */}
             <p>Description: {weatherData.current.weather[0].description}</p>
             {/* Display the humidity */}
             <p>Humidity: {weatherData.current.humidity}%</p>
+                      {/* Display weather tips based on temperature and weather condition */}
+            <WeatherTips
+              temperature={weatherData.current.temp}
+              weatherCondition={weatherData.current.weather[0].main}
+            />
           </div>
-          {/* Display weather tips based on temperature and weather condition */}
-          <WeatherTips
-            temperature={weatherData.current.temp}
-            weatherCondition={weatherData.current.weather[0].main}
-          />
         </>
       ) : (
         // Show loading message if weatherData is not available
