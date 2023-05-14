@@ -50,7 +50,7 @@ function HourlyForecast({ selectedCity }) {
             </thead>
             <tbody>
               {weatherData &&
-                weatherData.hourly.slice(0, 8).map((hour, index) => (
+                weatherData.hourly.slice(9, 16).map((hour, index) => (
                   <tr key={index}>
                     <td>{new Date(hour.dt * 1000).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</td>
                     <td>{Math.round(hour.temp)}&deg;F</td>
@@ -70,7 +70,7 @@ function HourlyForecast({ selectedCity }) {
             </thead>
             <tbody>
             {weatherData &&
-              weatherData.hourly.slice(0, 8).map((hour, index) => (
+              weatherData.hourly.slice(17, 24).map((hour, index) => (
                 <tr key={index}>
                   <td>{new Date(hour.dt * 1000).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</td>
                   <td>{Math.round(hour.temp)}&deg;F</td>
