@@ -1,16 +1,24 @@
 .footer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #d22030;
-    color: white;
-    padding: 10px;
-    min-height: 60px;
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #d22030;
+  color: white;
+  padding: 10px;
+  min-height: 60px;
+  padding-bottom: 20px;
+}
+
+.footer p {
+  font-weight: bold;
+}
+
+.footer a:visited {
+  color: white;
+}
   
-  .footer-text {
+.footer-text {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-  }
-  
+}

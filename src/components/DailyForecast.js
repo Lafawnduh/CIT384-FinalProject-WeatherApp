@@ -13,7 +13,7 @@ function DailyForecast({ selectedCity }) {
     // Function to fetch weather data from OpenWeatherMap API
     const fetchData = async () => {
       const response = await fetch(
-        `https://api.openweathermap.org/data/3.0/onecall?lat=${selectedCity.lat}&lon=${selectedCity.lon}&exclude=minutely,hourly,alerts&units=imperial&appid=${config.WEATHER_API_KEY}`
+        `https://api.openweathermap.org/data/3.0/onecall?lat=${selectedCity.lat}&lon=${selectedCity.lon}&exclude=minutely,hourly,alerts&units=imperial&appid=${config.WEATHER_API_KEY1}`
       );
       const data = await response.json();
       setWeatherData(data); // Update weatherData state with fetched data

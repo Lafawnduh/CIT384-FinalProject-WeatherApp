@@ -8,7 +8,7 @@ function HourlyForecast({ selectedCity }) {
   useEffect(() => {
     const fetchData = async () => {
       const response = await fetch(
-        `https://api.openweathermap.org/data/2.5/onecall?lat=${selectedCity.lat}&lon=${selectedCity.lon}&exclude=minutely,daily,alerts&units=imperial&appid=${config.WEATHER_API_KEY}`
+        `https://api.openweathermap.org/data/3.0/onecall?lat=${selectedCity.lat}&lon=${selectedCity.lon}&exclude=minutely,daily,alerts&units=imperial&appid=${config.WEATHER_API_KEY1}`
       );
       const data = await response.json();
       setWeatherData(data);

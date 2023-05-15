@@ -19,3 +19,6 @@
     border: .6em solid #d22030;
   }
   
+  .current-weather p {
+    font-size: 1.5em; /* or whatever size you prefer */
+}

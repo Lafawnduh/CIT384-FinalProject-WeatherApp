@@ -20,7 +20,7 @@ function WeatherSearchBar({ cityInput, setCityInput, handleSearch }) {
       // Function to fetch city suggestions from OpenWeatherMap API
       const fetchCities = async () => {
         const response = await fetch(
-          `https://api.openweathermap.org/geo/1.0/direct?q=${cityInput}&limit=8&appid=${config.WEATHER_API_KEY}`
+          `https://api.openweathermap.org/geo/1.0/direct?q=${cityInput}&limit=8&appid=${config.WEATHER_API_KEY1}`
         );
         const data = await response.json();
         setOptions(data); // Update options state with fetched city suggestions

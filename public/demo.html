@@ -6,7 +6,7 @@
   </head>
   <script>
     async function GetWeather() {
-      const response = await fetch("https://api.openweathermap.org/data/3.0/onecall?lat=34.2345615&lon=-118.5369316&exclude=minutely,hourly,daily,alerts&units=imperial&appid=ff67b25b2c0ba8dba32f1af3a4d0dac5");
+      const response = await fetch("https://api.openweathermap.org/data/3.0/onecall?lat=34.2345615&lon=-118.5369316&exclude=minutely,hourly,daily,alerts&units=imperial&appid=31ebf19b38a7f34d4735fa6505384d76");
       const demoCity = await response.json();
       console.log(demoCity);
       document.querySelector(`.temp`).innerHTML = `${demoCity.current.temp}`;
