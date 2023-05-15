@@ -61,7 +61,7 @@ function HourlyForecast({ selectedCity }) {
                 ))}
             </tbody>
           </table>
-          <table className="hourly-table">
+          <table className="hourly-table-1">
             <thead>
               <tr>
                 <th>Time</th>

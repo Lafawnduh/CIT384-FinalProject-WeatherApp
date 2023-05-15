@@ -16,6 +16,7 @@
   padding: 20px;
   border-radius: 10px;
   width: 80%;
+  border: .6em solid #d22030;
 }
 
 .daily-weather {

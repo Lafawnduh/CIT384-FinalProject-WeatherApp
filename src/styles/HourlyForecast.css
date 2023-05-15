@@ -39,6 +39,15 @@
     border-collapse: separate;
     border-spacing: 0;
     width: 100%;
+    border: thick Solid #d22030;
+    border-top-style: none;
+    border-left-style: none;
+    border-bottom-style: none;
+  }
+  .hourly-table-1 {
+    border-collapse: separate;
+    border-spacing: 0;
+    width: 100%;
   }
   
   .hourly-table td {
