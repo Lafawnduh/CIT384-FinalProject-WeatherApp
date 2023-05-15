@@ -11,8 +11,9 @@
     background-color: #f2f2f2;
     padding: 20px;
     border-radius: 10px;
-    width: 80%;
-    margin-left: -17%;
+    width: 76%;
+    margin-left: -14%;
+    border: .6em solid #d22030;
   }
   
   .hourly-weather-container {
