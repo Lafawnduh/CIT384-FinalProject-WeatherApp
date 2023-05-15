@@ -4,7 +4,7 @@ import '../styles/Footer.css';
 function Footer() {
   return (
     <footer className="footer">
-      <p className="footer-text">&copy; CIT 384 Web App Project {new Date().getFullYear()}</p>
+      <p className="footer-text">&copy; Matador Weather {new Date().getFullYear()}</p>
     </footer>
   );
 }
