@@ -1,13 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>OpenWeatherMap API Example</title>
-</head>
-<body>
-  <h1>OpenWeatherMap API Response:</h1>
-  <pre id="response-container"></pre>
-  <script src="script.js"></script>
-</body>
+  <head>
+    <meta charset="utf-8"/>
+    <title>Demonstration</title>
+  </head>
+  <script>
+    async function GetWeather() {
+      const response = await fetch("https://api.openweathermap.org/data/3.0/onecall?lat=34.2345615&lon=-118.5369316&exclude=minutely,hourly,daily,alerts&units=imperial&appid=ff67b25b2c0ba8dba32f1af3a4d0dac5");
+      const demoCity = await response.json();
+      console.log(demoCity);
+      document.querySelector(`.temp`).innerHTML = `${demoCity.current.temp}`;
+      document.querySelector(`.description`).innerHTML = `${demoCity.current.weather[0].description}`;
+      document.querySelector(`.humidity`).innerHTML = `${demoCity.current.humidity}`;
+    }
+    GetWeather();
+  </script>
+  <body>
+    <h1>OpenWeatherMap API Demonstration</h1>
+    <h3>This demonstration outputs basic weather information for a hardcoded location.</h3>
+    <p>Temperature: <span class="temp"></span>&deg; F</p>
+    <p>Description: <span class="description"></span></p>
+    <p>Humidity: <span class="humidity"></span>%</p>
+  </body>
 </html>
