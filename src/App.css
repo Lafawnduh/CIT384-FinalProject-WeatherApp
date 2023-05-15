@@ -39,17 +39,18 @@
 
 .main-container {
   display: flex;
-  justify-content: center;
+  justify-content: space-between; 
   align-items: flex-start;
   padding: 20px;
 }
 
 .current-weather-container {
-  width: 50%;
+  flex: 1; 
   margin-right: 10px;
 }
 
 .hourly-forecast-container {
-  width: 50%;
+  flex: 1;
   margin-left: 10px;
+  overflow-x: auto;
 }

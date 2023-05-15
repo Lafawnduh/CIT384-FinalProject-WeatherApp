@@ -25,7 +25,7 @@ function NewsArticles({ city }) {
     async function getNewsData() {
       setLoading(true); // Set loading state to true
       const resp = await axios.get(
-        `https://gnews.io/api/v4/search?q=${city}&lang=en&country=us&max=4&apikey=${config.NEWS_ARTICLES_API_KEY1}`
+        `https://gnews.io/api/v4/search?q=${city}&lang=en&country=us&max=4&apikey=${config.NEWS_ARTICLES_API_KEY}`
       );
       setNewsData(resp.data.articles); // Update newsData state with fetched data
       setLoading(false); // Set loading state to false
@@ -35,7 +35,7 @@ function NewsArticles({ city }) {
   }, [city]);
 
   return (
-    <div className="App">
+    <div className="news-articles-card">
       {loading ? (
         <p>Loading...</p>
       ) : (

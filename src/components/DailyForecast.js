@@ -23,7 +23,7 @@ function DailyForecast({ selectedCity }) {
 
   return (
     <div className="container">
-      <div className="weather-card">
+      <div className="daily-weather-card">
         {/* Display header with city and state if weatherData is available, otherwise show 'Loading...' */}
         <h2>{weatherData ? `Daily Forecast for ${selectedCity.name}, ${selectedCity.state}` : 'Loading...'}</h2>
         <div className="daily-weather-container">

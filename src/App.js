@@ -60,9 +60,10 @@ function App() {
         </div>
       </div>
 
-      <DailyForecast selectedCity={selectedCity} />
+      <DailyForecast selectedCity={selectedCity} /><br></br>
 
-      <NewsArticles city={city} />
+      <NewsArticles city={city} /><br></br>
+
       <Footer />
     </div>
   );

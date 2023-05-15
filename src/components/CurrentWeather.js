@@ -43,7 +43,7 @@ function CurrentWeather({ selectedCity }) {
             <p>Description: {weatherData.current.weather[0].description}</p>
             {/* Display the humidity */}
             <p>Humidity: {weatherData.current.humidity}%</p>
-                      {/* Display weather tips based on temperature and weather condition */}
+            {/* Display weather tips based on temperature and weather condition */}
             <WeatherTips
               temperature={weatherData.current.temp}
               weatherCondition={weatherData.current.weather[0].main}
