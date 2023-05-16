@@ -1,45 +1,45 @@
-// Import necessary libraries
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import config from './config';
+// Import necessary libraries and modules
+import React, { useState, useEffect } from 'react'; // React and its hooks
+import axios from 'axios'; // Axios for making HTTP requests
+import config from './config'; // Config file to store API keys
 import {
   Card,
   CardActionArea,
   CardMedia,
   CardContent,
   Typography,
-} from '@mui/material';
-import '../styles/NewsArticles.css';
+} from '@mui/material'; // Material-UI components
+import '../styles/NewsArticles.css'; // CSS for this component
 
-
-// NewsArticles component
+// Define the NewsArticles component, which accepts a prop 'city'
 function NewsArticles({ city }) {
-  // State to store the fetched news data
+  // Declare state variables 'newsData' and 'loading' for storing fetched news data and loading state
   const [newsData, setNewsData] = useState([]);
-  // State to control the loading status
   const [loading, setLoading] = useState(false);
 
-  // useEffect hook to fetch news data when the city changes
+  // Use the useEffect hook to fetch news data when 'city' changes
   useEffect(() => {
-    // Function to fetch news data from GNews API
+    // Define an async function to fetch news data from GNews API
     async function getNewsData() {
-      setLoading(true); // Set loading state to true
+      setLoading(true); // Start loading before fetching data
       const resp = await axios.get(
         `https://gnews.io/api/v4/search?q=${city}&lang=en&country=us&max=4&apikey=${config.NEWS_ARTICLES_API_KEY}`
       );
-      setNewsData(resp.data.articles); // Update newsData state with fetched data
-      setLoading(false); // Set loading state to false
+      setNewsData(resp.data.articles); // Store fetched data in 'newsData'
+      setLoading(false); // Stop loading after fetching data
     }
 
     getNewsData(); // Call the getNewsData function
-  }, [city]);
+  }, [city]); // End of useEffect hook, with 'city' as the dependency
 
+  // Render loading state or news articles based on 'loading' state
   return (
     <div className="news-articles-card">
       {loading ? (
-        <p>Loading...</p>
+        <p>Loading...</p> // Render 'Loading...' if 'loading' is true
       ) : (
         <div className="grid-container">
+          {/* Map over 'newsData' and render each news article */}
           {newsData.map((article, index) => (
             <Card key={index} className="card">
               <CardActionArea
@@ -70,5 +70,5 @@ function NewsArticles({ city }) {
   );
 }
 
-// Export the NewsArticles component
+// Export the NewsArticles component so it can be used in other modules
 export default NewsArticles;

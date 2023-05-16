@@ -34,7 +34,7 @@ function CurrentWeather({ selectedCity }) {
             <h3>{new Date(weatherData.current.dt * 1000).toLocaleDateString()}, {new Date(weatherData.current.dt * 1000).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</h3>
             {/* Display the weather icon */}
             <img
-              src={`http://openweathermap.org/img/w/${weatherData.current.weather[0].icon}.png`}
+              src={`https://openweathermap.org/img/w/${weatherData.current.weather[0].icon}.png`}
               alt="Weather icon"
             />
             {/* Display the current temperature */}
