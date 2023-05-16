@@ -1,12 +1,13 @@
-body {
-  margin: 0;
+/* Set margin and font family for the body */
+body {margin: 0;
+
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;/* Improve font rendering on Webkit browsers */
+  -moz-osx-font-smoothing: grayscale;/* Improve font rendering on macOS */
 }
-
+/* Set font family for code elements */
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

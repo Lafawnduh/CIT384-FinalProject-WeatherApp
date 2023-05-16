@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import config from './config';
 import '../styles/HourlyForecast.css';
-
+// HourlyForecast component for displaying the hourly weather forecast
 function HourlyForecast({ selectedCity }) {
   const [weatherData, setWeatherData] = useState(null);
-
+ // Fetch weather data for the selected city when it changes
   useEffect(() => {
     const fetchData = async () => {
       const response = await fetch(
